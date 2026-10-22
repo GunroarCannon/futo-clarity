@@ -1,0 +1,2016 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ebd9b5">
+<meta name="description" content="FUTO Final Year Clearance Tracker & Dossier - Track all 15 university clearance sign-offs, offices, fees, and requirements in authentic paper style.">
+<title>FUTO Final Year Clearance Tracker · Official Dossier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=Kalam:wght@400;700&family=Permanent+Marker&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   FUTO CLEARANCE DOSSIER - PAPER & INK AESTHETIC
+   Inspired by authentic Nigerian university clearance dockets, rubber stamps,
+   Manila file folders, bank deposit tellers, and ballpoint pen annotations.
+   ========================================================================== */
+
+:root {
+  --ink: #191410;
+  --ink-soft: #4a3b30;
+  --ink-faint: #7a6858;
+  --paper: #fbf7ec;
+  --paper-card: #fffdf8;
+  --paper-folder: #e8d5b0;
+  --paper-folder-dark: #dcbe8e;
+  --paper-yellow: #fef8d3;
+  --paper-blue: #e8f0f8;
+  --paper-red: #fcedeb;
+  
+  --line: #d8c4a0;
+  --line-strong: #191410;
+  
+  /* Stamp Inks */
+  --stamp-green: #14683d;
+  --stamp-green-bg: #e3f2e9;
+  --stamp-red: #b32a2a;
+  --stamp-red-bg: #fbe6e6;
+  --stamp-blue: #1b5387;
+  --stamp-blue-bg: #e6f0fa;
+  --stamp-amber: #8e5804;
+  --stamp-amber-bg: #fcf1db;
+  
+  --font-body: 'Figtree', system-ui, -apple-system, sans-serif;
+  --font-hand: 'Kalam', cursive, sans-serif;
+  --font-typewriter: 'Special Elite', 'Courier Prime', monospace;
+  --font-stamp: 'Permanent Marker', 'Kalam', cursive, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  
+  --r: 6px;
+  --border-ink: 2px solid var(--ink);
+  --shadow-paper: 3px 3px 0 var(--ink);
+  --shadow-paper-lg: 4px 5px 0 var(--ink);
+  --shadow-paper-sm: 2px 2px 0 var(--ink);
+  
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 140px;
+}
+body {
+  margin: 0;
+  background-color: #ebd9b5;
+  background-image: 
+    radial-gradient(ellipse at 50% 15%, rgba(255, 252, 240, 0.75) 0%, rgba(242, 224, 192, 0.45) 55%),
+    radial-gradient(ellipse at 50% 85%, rgba(145, 100, 50, 0.18) 0%, rgba(85, 55, 20, 0.28) 100%);
+  color: var(--ink);
+  font: 400 16px/1.55 var(--font-body);
+  min-height: 100vh;
+  position: relative;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Wrinkled Paper Overlay across the entire viewport */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  pointer-events: none;
+  background: url('assets/wrinkled-paper.jpg') center / cover;
+  mix-blend-mode: multiply;
+  opacity: 0.65;
+}
+
+h1, h2, h3, h4, h5, p, ul, ol, dl, dd { margin: 0; }
+button { font: inherit; color: inherit; cursor: pointer; border: none; background: none; }
+a { color: var(--stamp-blue); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+a:hover { color: var(--ink); }
+
+:focus-visible {
+  outline: 3px dashed var(--stamp-blue);
+  outline-offset: 3px;
+}
+
+.in {
+  max-width: 780px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+.mono, .money { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.typewriter { font-family: var(--font-typewriter); }
+.hand { font-family: var(--font-hand); }
+
+.eyebrow {
+  font-family: var(--font-typewriter);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.help {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+/* ==========================================================================
+   TOP FILE FOLDER / HEADER
+   ========================================================================== */
+.top {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--paper-folder);
+  border-bottom: 2px solid var(--ink);
+  box-shadow: 0 4px 0 rgba(26,20,16,0.18), 0 8px 18px rgba(60,40,15,0.12);
+}
+
+.top-inner {
+  padding-top: max(10px, env(safe-area-inset-top, 0px));
+}
+
+.official-crest-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px dashed rgba(25, 20, 16, 0.35);
+}
+.docket-serial {
+  font-family: var(--font-typewriter);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.sfx-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 2px 7px;
+  border: 1.5px solid var(--ink);
+  border-radius: 4px;
+  background: var(--paper-card);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+.sfx-toggle:active { transform: translate(1px, 1px); box-shadow: none; }
+.sfx-toggle svg { width: 13px; height: 13px; fill: currentColor; }
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-block: 8px 4px;
+}
+.brand { min-width: 0; }
+.brand-sub {
+  display: block;
+  font-family: var(--font-typewriter);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--stamp-blue);
+  font-weight: 700;
+}
+.brand b {
+  display: block;
+  font-family: var(--font-typewriter);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.brand span {
+  font-family: var(--font-hand);
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+/* Rubber Stamp Docket Pill */
+.stamp-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4px 10px;
+  border: 2px solid var(--stamp-green);
+  border-radius: 5px;
+  background: var(--stamp-green-bg);
+  color: var(--stamp-green);
+  box-shadow: 2px 2px 0 var(--ink);
+  transform: rotate(-1.5deg);
+  white-space: nowrap;
+}
+.stamp-pill .sp-lbl {
+  font-family: var(--font-stamp);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  line-height: 1;
+}
+.stamp-pill .sp-val {
+  font-family: var(--font-typewriter);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/* Physical Folder Tabs */
+.tabs {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-top: 6px;
+  margin-bottom: -2px;
+}
+.tabs::-webkit-scrollbar { display: none; }
+.tab {
+  flex: 1 0 auto;
+  min-height: 38px;
+  padding: 6px 14px 4px;
+  background: #dbbe8e;
+  border: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  border-radius: 8px 8px 0 0;
+  font-family: var(--font-typewriter);
+  font-weight: 700;
+  font-size: 0.86rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  position: relative;
+  transition: background 0.15s, color 0.15s, transform 0.15s;
+}
+.tab:hover {
+  background: #ecd6ad;
+  color: var(--ink);
+}
+.tab[aria-selected="true"] {
+  background: var(--paper-card);
+  color: var(--ink);
+  border-bottom: 2px solid var(--paper-card);
+  z-index: 2;
+  box-shadow: 0 -2px 0 rgba(26,20,16,0.15);
+}
+
+/* ==========================================================================
+   MAIN CONTENT & PAPER CARDS
+   ========================================================================== */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-block: 20px 24px;
+}
+
+/* Physical Paper Sheet / Card */
+.card {
+  background: var(--paper-card);
+  border: 2px solid var(--ink);
+  border-radius: 4px 8px 5px 9px;
+  box-shadow: var(--shadow-paper), 0 8px 18px rgba(50, 35, 15, 0.1);
+  position: relative;
+  background-image: 
+    linear-gradient(rgba(240, 230, 205, 0.15) 1px, transparent 1px);
+  background-size: 100% 28px;
+}
+
+/* Decorative simulated brass paperclip on featured cards */
+.has-clip::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 28px;
+  width: 14px;
+  height: 34px;
+  border: 2.5px solid #6b5b47;
+  border-bottom: none;
+  border-radius: 7px 7px 0 0;
+  background: transparent;
+  box-shadow: 1px 1px 0 rgba(0,0,0,0.25);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Physical Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 42px;
+  padding: 0 16px;
+  border: 2px solid var(--ink);
+  border-radius: 4px 7px 4px 6px;
+  background: var(--paper-folder);
+  font-family: var(--font-typewriter);
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  box-shadow: var(--shadow-paper-sm);
+  transition: transform 0.1s, box-shadow 0.1s, background 0.15s;
+}
+.btn:hover {
+  background: #f0e0be;
+}
+.btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+.btn.primary {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+.btn.primary:hover {
+  background: #2b231d;
+}
+.btn.stamp-btn {
+  background: var(--stamp-green);
+  border-color: var(--ink);
+  color: #fff;
+}
+.btn.stamp-btn:hover {
+  background: #0e502e;
+}
+.btn.danger {
+  background: var(--paper-red);
+  color: var(--stamp-red);
+  border-color: var(--stamp-red);
+}
+.btn.danger:hover {
+  background: #f9d5d5;
+}
+.btn.danger.arm {
+  background: var(--stamp-red);
+  color: #fff;
+  border-color: var(--ink);
+}
+
+/* Ink Hash-mark Progress Meter */
+.meter {
+  height: 12px;
+  border: 2px solid var(--ink);
+  border-radius: 4px;
+  background: #eadeca;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 2px 3px rgba(26,20,16,0.18);
+}
+.meter i {
+  display: block;
+  height: 100%;
+  background: var(--stamp-green);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.25) 0px,
+    rgba(255, 255, 255, 0.25) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  transition: width 0.35s ease-out;
+}
+
+/* Rubber Stamp Chips */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-typewriter);
+  font-size: 0.76rem;
+  font-weight: 700;
+  line-height: 1.25;
+  padding: 3px 8px;
+  border: 1.8px solid var(--ink);
+  border-radius: 3px 5px 3px 4px;
+  background: var(--paper-folder);
+  color: var(--ink);
+  box-shadow: 1px 1px 0 rgba(26,20,16,0.4);
+}
+.chip.cost {
+  background: var(--stamp-blue-bg);
+  border-color: var(--stamp-blue);
+  color: var(--stamp-blue);
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+.chip.block {
+  background: var(--stamp-red-bg);
+  border-color: var(--stamp-red);
+  color: var(--stamp-red);
+  border-style: dashed;
+}
+.chip.ok {
+  background: var(--stamp-green-bg);
+  border-color: var(--stamp-green);
+  color: var(--stamp-green);
+  font-family: var(--font-stamp);
+  letter-spacing: 0.05em;
+  transform: rotate(-1.5deg);
+}
+.chip.late {
+  background: var(--stamp-amber-bg);
+  border-color: var(--stamp-amber);
+  color: var(--stamp-amber);
+}
+
+/* Ballpoint Pen Checkbox */
+input[type=checkbox] {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+  cursor: pointer;
+  position: relative;
+  flex: none;
+}
+.check input {
+  width: 28px;
+  height: 28px;
+  border: 2.2px solid var(--ink);
+  border-radius: 4px 6px 3px 5px;
+  background: #fffdf7;
+  box-shadow: 2px 2px 0 rgba(26,20,16,0.4);
+  transition: transform 0.12s, background 0.12s;
+}
+.check input:hover {
+  transform: scale(1.05);
+}
+.check input:checked {
+  background: var(--stamp-green);
+  border-color: var(--ink);
+  animation: stampPop 0.22s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+.check input:checked::after {
+  content: "";
+  position: absolute;
+  left: 9px;
+  top: 3px;
+  width: 7px;
+  height: 14px;
+  border: solid #fffdf8;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+@keyframes stampPop {
+  0% { transform: scale(0.7) rotate(-8deg); }
+  60% { transform: scale(1.15) rotate(4deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+/* Switch */
+.sw {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  cursor: pointer;
+  font-size: 0.94rem;
+  font-family: var(--font-body);
+}
+.sw input {
+  width: 44px;
+  height: 24px;
+  border: 2px solid var(--ink);
+  border-radius: 99px;
+  background: #d8c6a5;
+  box-shadow: 1px 1px 0 rgba(26,20,16,0.5);
+  transition: background 0.15s;
+}
+.sw input::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--ink);
+  border-radius: 50%;
+  background: var(--paper-card);
+  transition: transform 0.15s;
+}
+.sw input:checked {
+  background: var(--stamp-green);
+}
+.sw input:checked::after {
+  transform: translateX(19px);
+  background: #fff;
+}
+
+/* ==========================================================================
+   OVERVIEW CARD (OFFICIAL CLEARANCE STATUS)
+   ========================================================================== */
+.ov {
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: 2px solid var(--ink);
+}
+.ov-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px dashed var(--line);
+  padding-bottom: 10px;
+}
+.ov-title {
+  font-family: var(--font-typewriter);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.ov-stamp {
+  font-family: var(--font-stamp);
+  font-size: 0.8rem;
+  color: var(--stamp-red);
+  transform: rotate(-3deg);
+  border: 1.5px solid var(--stamp-red);
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+
+.ov-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.ov-box {
+  background: var(--paper);
+  border: 1.8px solid var(--ink);
+  border-radius: 4px;
+  padding: 10px 14px;
+  box-shadow: 2px 2px 0 rgba(26,20,16,0.3);
+}
+.ov-box .v {
+  display: block;
+  font-family: var(--font-typewriter);
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-top: 3px;
+}
+
+.next {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-top: 14px;
+  border-top: 2px dashed var(--line);
+}
+.next div {
+  min-width: 0;
+  flex: 1 1 200px;
+}
+.next b {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   GUIDE ACCORDION (DOSSIER BRIEFING)
+   ========================================================================== */
+.guide summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px;
+  min-height: 54px;
+  cursor: pointer;
+  font-family: var(--font-typewriter);
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: inherit;
+}
+.guide summary::-webkit-details-marker { display: none; }
+.guide summary small {
+  display: block;
+  font-family: var(--font-hand);
+  font-weight: 400;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  margin-top: 2px;
+}
+.guide summary svg {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  stroke-width: 2.5;
+  transition: transform 0.2s;
+}
+.guide[open] summary svg { transform: rotate(180deg); }
+
+.gb {
+  padding: 0 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-top: 1px dashed var(--line);
+  padding-top: 16px;
+}
+.gb h4 {
+  font-family: var(--font-typewriter);
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+.how {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  counter-reset: s;
+}
+.how li {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 12px;
+  counter-increment: s;
+  font-size: 0.95rem;
+}
+.how li::before {
+  content: counter(s);
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--paper-folder);
+  color: var(--ink);
+  font-family: var(--font-typewriter);
+  font-weight: 700;
+  font-size: 0.85rem;
+  box-shadow: 1px 1px 0 var(--ink);
+}
+.how b { display: block; font-weight: 700; }
+.how span { color: var(--ink-soft); }
+
+.gl {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 8px 16px;
+  font-size: 0.92rem;
+  background: var(--paper);
+  border: 1.5px solid var(--line);
+  border-radius: 4px;
+  padding: 12px 14px;
+}
+.gl dt {
+  font-family: var(--font-typewriter);
+  font-weight: 700;
+  color: var(--stamp-blue);
+}
+.gl dd { color: var(--ink-soft); }
+@media(max-width: 500px) {
+  .gl { grid-template-columns: 1fr; gap: 4px; }
+  .gl dd { margin-bottom: 8px; }
+}
+
+/* ==========================================================================
+   PANELS & CLEARANCE STEPS
+   ========================================================================== */
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.note {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  font-size: 0.92rem;
+  border: 2px dashed var(--stamp-green);
+  background: var(--stamp-green-bg);
+}
+.note span.t { display: block; color: var(--ink-soft); font-size: 0.86rem; }
+
+/* Phase Header */
+.phase {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.phase-h {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.phase h3 {
+  font-family: var(--font-typewriter);
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+.phase .cnt {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+.phase p {
+  font-family: var(--font-hand);
+  font-size: 1.02rem;
+  color: var(--ink-soft);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Step Card */
+.step {
+  transition: transform 0.15s, box-shadow 0.15s, background 0.2s;
+}
+.step.done {
+  background: #f4efe1;
+  border-color: #3b3228;
+}
+.step.done::before {
+  content: "OFFICIALLY CLEARED";
+  position: absolute;
+  right: 18px;
+  top: 50px;
+  font-family: var(--font-stamp);
+  font-size: 1.4rem;
+  letter-spacing: 0.12em;
+  color: rgba(20, 104, 61, 0.15);
+  transform: rotate(-12deg);
+  pointer-events: none;
+  z-index: 1;
+}
+.step.done .ttl {
+  color: var(--ink-soft);
+}
+.step.flash {
+  box-shadow: 0 0 0 4px var(--stamp-blue), var(--shadow-paper-lg);
+  transform: scale(1.01);
+}
+
+.sh {
+  display: flex;
+  align-items: center;
+  padding: 4px 10px 4px 6px;
+}
+.check {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 56px;
+  flex: none;
+  cursor: pointer;
+}
+
+.toggle {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+  padding: 6px 0;
+  text-align: left;
+}
+.num {
+  font-family: var(--font-typewriter);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--stamp-blue);
+  flex: none;
+  padding: 2px 6px;
+  border: 1.5px solid var(--stamp-blue);
+  border-radius: 4px;
+  background: var(--paper-blue);
+}
+.ttl {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+.chev {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  color: var(--ink-soft);
+  transition: transform 0.2s;
+}
+.step.open .chev { transform: rotate(180deg); }
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0 16px 6px 54px;
+}
+.short {
+  padding: 2px 16px 14px 54px;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.45;
+}
+
+/* Step Accordion Detail */
+.detail {
+  border-top: 2px dashed var(--line);
+  padding: 16px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: rgba(250, 246, 235, 0.6);
+}
+.detail h5 {
+  margin: 0 0 6px;
+  font-family: var(--font-typewriter);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.where {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Checklist items with ballpoint ticks */
+.sm {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 38px;
+  cursor: pointer;
+  font-size: 0.94rem;
+}
+.sm input {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--ink);
+  border-radius: 4px;
+  background: #fffdf8;
+  box-shadow: 1px 1px 0 rgba(26,20,16,0.3);
+}
+.sm input:checked {
+  background: var(--stamp-blue);
+  border-color: var(--ink);
+}
+.sm input:checked::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2.5px 2.5px 0;
+  transform: rotate(45deg);
+}
+.sm b {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+.sm:has(input:checked) > span {
+  color: var(--ink-faint);
+  text-decoration: line-through;
+  text-decoration-color: var(--ink-soft);
+  text-decoration-thickness: 1.5px;
+}
+
+.lines {
+  list-style: none;
+  padding: 0;
+  font-size: 0.92rem;
+  background: var(--paper-card);
+  border: 1.5px solid var(--line);
+  border-radius: 4px;
+  padding: 4px 12px;
+}
+.lines li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.lines li:last-child { border-bottom: 0; }
+.lines b {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Sticky Post-It Note / Tip Memo */
+.tip {
+  background: var(--paper-yellow);
+  border: 1.8px solid #c9b068;
+  border-radius: 3px 6px 4px 7px;
+  padding: 12px 16px;
+  font-family: var(--font-hand);
+  font-size: 1.05rem;
+  line-height: 1.45;
+  color: #3b2a0c;
+  box-shadow: 2px 3px 0 rgba(100, 75, 20, 0.15);
+  position: relative;
+  margin-top: 6px;
+}
+.tip::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 24px;
+  width: 48px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px dashed rgba(160, 140, 90, 0.6);
+  transform: rotate(-1.5deg);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+}
+.tip b {
+  font-family: var(--font-stamp);
+  font-size: 0.88rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--stamp-amber);
+  margin-right: 4px;
+}
+
+/* ==========================================================================
+   LOCATION CLUSTERS
+   ========================================================================== */
+.tipb {
+  background: var(--stamp-blue-bg);
+  color: #123d63;
+  border: 2px dashed var(--stamp-blue);
+  border-radius: var(--r);
+  padding: 14px 16px;
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+}
+.clusters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 14px;
+}
+.cl {
+  padding: 16px 18px;
+}
+.cl-h {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  border-bottom: 1.5px dashed var(--line);
+  padding-bottom: 8px;
+}
+.cl h4 {
+  font-family: var(--font-typewriter);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   BUDGET & BANK LEDGER SHEET
+   ========================================================================== */
+.panel .pad {
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.big {
+  font-family: var(--font-typewriter);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 9vw, 3rem);
+  line-height: 1.1;
+  color: var(--stamp-red);
+}
+.rows > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1.5px dashed var(--line);
+  font-size: 0.95rem;
+}
+.rows > div:last-child { border-bottom: 0; }
+.rows b {
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+.bl {
+  list-style: none;
+  padding: 0;
+  font-size: 0.94rem;
+}
+.bl li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.bl li:last-child { border-bottom: 0; }
+.bl .n { flex: 1; min-width: 0; font-weight: 500; }
+.bl .a {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.bag {
+  padding: 8px 18px;
+}
+.bag .sm {
+  border-bottom: 1px dashed var(--line);
+  min-height: 48px;
+}
+.bag .sm:last-child { border-bottom: 0; }
+
+/* ==========================================================================
+   FOOTER & TACTILE TOASTS
+   ========================================================================== */
+footer {
+  padding-block: 28px 64px;
+  border-top: 2px dashed rgba(26, 20, 16, 0.25);
+  margin-top: 20px;
+}
+footer p {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  margin-bottom: 16px;
+  line-height: 1.55;
+}
+.fb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Rubber Stamp Style Toast */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  z-index: 120;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-typewriter);
+  font-weight: 700;
+  font-size: 0.94rem;
+  padding: 12px 20px;
+  border: 2px solid var(--paper);
+  border-radius: 6px;
+  box-shadow: 4px 5px 0 rgba(0,0,0,0.6);
+  width: max-content;
+  max-width: min(92vw, 440px);
+  opacity: 0;
+  transform: translate(-50%, 14px) rotate(-1deg);
+  transition: opacity 0.22s, transform 0.22s;
+  pointer-events: none;
+}
+.toast.in {
+  opacity: 1;
+  transform: translate(-50%, 0) rotate(-1deg);
+}
+
+@media(prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, ::before, ::after { transition: none !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="in top-inner">
+    <div class="official-crest-bar">
+      <span class="docket-serial">Federal University of Technology, Owerri · Form CLR-15</span>
+      <button class="sfx-toggle" id="sfxBtn" type="button" aria-label="Toggle sound effects">
+        <svg viewBox="0 0 24 24" id="sfxIcon"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+        <span id="sfxLabel">SFX ON</span>
+      </button>
+    </div>
+    <div class="bar">
+      <div class="brand">
+        <span class="brand-sub">Final Year Clearance Dossier</span>
+        <b>FUTO Clearance Tracker</b>
+        <span>Session 2025/2026 · 15 Official Stops</span>
+      </div>
+      <div class="stamp-pill" id="hPillWrapper" title="Official Cleared Stamp Count">
+        <span class="sp-lbl">CLEARED</span>
+        <span class="sp-val" id="hPill">0 / 15</span>
+      </div>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="Clearance Sections">
+      <button class="tab" role="tab" data-tab="steps" aria-selected="true">① Clearance Steps</button>
+      <button class="tab" role="tab" data-tab="location" aria-selected="false">② By Location</button>
+      <button class="tab" role="tab" data-tab="budget" aria-selected="false">③ Bank & Budget</button>
+      <button class="tab" role="tab" data-tab="bag" aria-selected="false">④ Bag & Documents</button>
+    </nav>
+  </div>
+</header>
+
+<main class="in">
+  <!-- Progress Overview Card -->
+  <section class="card ov has-clip" aria-label="Clearance Progress Summary">
+    <div class="ov-header">
+      <span class="ov-title">Official Clearance Status</span>
+      <span class="ov-stamp" id="statusStamp">IN PROGRESS</span>
+    </div>
+    <div class="meter" role="progressbar" aria-valuemin="0" aria-valuemax="15" id="mAria">
+      <i id="mBar" style="width:0%"></i>
+    </div>
+    <div class="ov-top">
+      <div class="ov-box">
+        <span class="eyebrow">Stamps Cleared</span>
+        <span class="v" id="sDone">0 / 15</span>
+      </div>
+      <div class="ov-box">
+        <span class="eyebrow">Estimated Left To Pay</span>
+        <span class="v" id="sLeft">₦0</span>
+      </div>
+    </div>
+    <div class="next">
+      <div>
+        <span class="eyebrow">Next Recommended Stop</span>
+        <b id="sNext">Buy the Clearance Form</b>
+      </div>
+      <button class="btn primary" data-act="jump">Go to this stop →</button>
+    </div>
+  </section>
+
+  <!-- Dossier Guide -->
+  <details class="card guide" id="guide" open>
+    <summary>
+      <span>How this clearance dossier works<small>A 2-minute field guide before hitting campus offices</small></span>
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8l5 5 5-5"/></svg>
+    </summary>
+    <div class="gb">
+      <p>Clearance is a sequence of mandatory official sign-offs from FUTO administrative and faculty units confirming you owe zero dues, equipment, or library books. You need all stamps on your form before you can collect your Statement of Result. Departmental clearance is already settled, leaving 15 stops.</p>
+      <div>
+        <h4>Operating Instructions</h4>
+        <ol class="how">
+          <li><div><b>Tick a step once the ink stamp lands on your paper form.</b><span>Your clearance progress saves locally on this phone or browser automatically.</span></div></li>
+          <li><div><b>Expand any step before heading out.</b><span>Check the exact room location, documents to carry in your folder, and required fee tellers.</span></div></li>
+          <li><div><b>Respect the prerequisite stops.</b><span>Purchase the form, pay portal invoices, and verify at Bursary Room 19 first (Steps 1 to 3). Red tags highlight dependencies.</span></div></li>
+          <li><div><b>Calibrate the Budget sheet.</b><span>Turn cushion tips or late penalty switches on or off to match your exact bank receipts.</span></div></li>
+        </ol>
+      </div>
+      <div>
+        <h4>Administrative Glossary</h4>
+        <dl class="gl">
+          <dt>Bank Teller</dt><dd>The physical paper deposit slip stamped by the bank cashier.</dd>
+          <dt>Remita / RRR</dt><dd>The electronic payment invoice. RRR is the 12-digit Remita Retrieval Reference.</dd>
+          <dt>Room 19</dt><dd>Bursary Unit verification office on the ground floor of Senate Building.</dd>
+          <dt>SUG Receipt</dt><dd>Official proof of paid Students' Union Government annual dues.</dd>
+          <dt>Cushion</dt><dd>An optional ₦1,000 allowance per unit for miscellaneous administrative tips. You can toggle this off.</dd>
+          <dt>Statement of Result</dt><dd>The final academic certificate document you collect at Old SEET Head.</dd>
+        </dl>
+      </div>
+    </div>
+  </details>
+
+  <div id="panels" style="scroll-margin-top:130px"></div>
+  
+  <!-- Panel 1: Steps -->
+  <section class="panel" id="p-steps" role="tabpanel"></section>
+  
+  <!-- Panel 2: Locations -->
+  <section class="panel" id="p-location" role="tabpanel" hidden>
+    <div class="tipb"><b>Campus Routing Strategy:</b> Batch stops by geographical cluster to avoid endless walking between Senate Building, Old SEET Head, and FUTO Press. Marking a stop here synchronizes with the main Steps checklist.</div>
+    <div class="clusters" id="clusters"></div>
+  </section>
+  
+  <!-- Panel 3: Budget -->
+  <section class="panel" id="p-budget" role="tabpanel" hidden>
+    <div class="card"><div class="pad">
+      <span class="eyebrow">Estimated Outstanding Balance</span>
+      <div class="big" id="bLeft">₦0</div>
+      <div class="meter" aria-hidden="true"><i id="bBar" style="width:0%"></i></div>
+      <div class="rows">
+        <div><span>Estimated total expenditure</span><b id="bTotal"></b></div>
+        <div><span>Marked as paid / settled</span><b id="bPaid"></b></div>
+        <div><span>Still outstanding</span><b id="bLeft2"></b></div>
+      </div>
+      <button class="btn" data-act="copy">📋 Copy budget summary</button>
+    </div></div>
+    
+    <div class="card"><div class="pad">
+      <span class="eyebrow">Fee Configuration</span>
+      <label class="sw"><input type="checkbox" data-set="cushion"><span>Include ₦1,000 cushion per office (unofficial tips)</span></label>
+      <label class="sw"><input type="checkbox" data-set="lateFee"><span>Paid school fees late (adds ₦5,500 penalty)</span></label>
+      <label class="sw"><input type="checkbox" data-set="hasSUG"><span>Already possess official SUG receipt</span></label>
+      <label class="sw"><input type="checkbox" data-set="formBought"><span>Already purchased the Clearance Form (Step 1)</span></label>
+      <p class="help">The cushion covers photocopy, stamp, and small unofficial office tips. Turn it off to inspect pure statutory fees.</p>
+    </div></div>
+    
+    <div class="card"><div class="pad">
+      <span class="eyebrow">Itemized Disbursements by Stop</span>
+      <ul class="bl" id="bList"></ul>
+    </div></div>
+    <p class="help">Figures sourced from the 2025/2026 FUTO Final Year Clearance Guide by Elite Academic Hub. Confirm current rates on official Bursary bulletin boards.</p>
+  </section>
+  
+  <!-- Panel 4: Bag List -->
+  <section class="panel" id="p-bag" role="tabpanel" hidden>
+    <p class="help">Pack all physical documents and receipts required for your uncleared stops. The multiplier indicates how many upcoming offices will inspect that item.</p>
+    <div class="card bag" id="bagList"></div>
+    <div><button class="btn" data-act="unpack">Clear checked packing items</button></div>
+  </section>
+</main>
+
+<footer>
+  <div class="in">
+    <p>Authored by <a href="https://x.com/therealgunroar" target="_blank" rel="noopener noreferrer">@therealgunroar on X</a>. Designed as an authentic university paper docket based on the FUTO Final Year Clearance Guide (2025/2026) by Elite Academic Hub. Unofficial guide; always verify current procedures with the Senate notice boards.</p>
+    <div class="fb">
+      <button class="btn" data-act="top">↑ Back to dossier top</button>
+      <button class="btn danger" id="resetBtn" data-act="reset">Reset clearance record</button>
+    </div>
+  </div>
+</footer>
+
+<div id="toasts" role="status" aria-live="polite"></div>
+
+<script>
+/* ==========================================================================
+   DATA & APPLICATION STATE
+   ========================================================================== */
+const CUSHION = 1000;
+const PHASES = [
+  { id: 1, name: "Pay & Paper", blurb: "Purchase official form, settle bank invoices, verify tellers at Bursary Room 19." },
+  { id: 2, name: "Campus Run", blurb: "Collect mandatory unit clearance stamps across campus departments." },
+  { id: 3, name: "Sign-offs", blurb: "Executive signatures and final fee audits unlocking your academic release." },
+  { id: 4, name: "Finish Line", blurb: "Scroll payment, bursary audit clearance, and Statement of Result retrieval." }
+];
+
+const STEPS = [
+  {
+    id: 1, phase: 1,
+    title: "Buy the Clearance Form",
+    short: "Pick up the official clearance docket form and fill in your personal and academic biodata.",
+    location: "FUTO Press, Old Microfinance Building (beside Computer Science)",
+    locationGroup: "FUTO Press area",
+    dependsOn: [],
+    bring: ["Cash for the form", "Blue or black ballpoint pen"],
+    cost: [{ label: "Clearance form purchase", amount: 1000, key: "form" }],
+    cushion: true,
+    tip: "Do this first. Every single subsequent office inspects and signs this physical paper form."
+  },
+  {
+    id: 2, phase: 1,
+    title: "Portal Invoices & Payments",
+    short: "Generate Alumni, Brochure/Convocation (and late-fee, if applicable) invoices online, then settle at bank.",
+    location: "FUTO Portal + FUTO Microfinance Bank / Remita (portal.futo.edu.ng/sundry/all)",
+    locationGroup: "Portal / Bank / Remita",
+    dependsOn: [1],
+    bring: ["Portal credentials", "Cash for bank transaction charges", "Smartphone or printouts for tellers & receipts"],
+    cost: [
+      { label: "Alumni fee (incl. charges)", amount: 5750, key: "alumni" },
+      { label: "Convocation / Brochure fee (incl. charges)", amount: 9750, key: "convo" },
+      { label: "Late school fees penalty", amount: 5500, key: "late", conditional: "lateFee" }
+    ],
+    cushion: true,
+    tip: "Alumni and late fee: FUTO Microfinance Bank only. Convocation: Remita (RRR) or Microfinance Bank. Preserve every teller slip and Remita printout in your document folder."
+  },
+  {
+    id: 3, phase: 1,
+    title: "Bursary Verification (Room 19)",
+    short: "Submit your stapled receipts, tellers, and school fee remita printouts for verification audit.",
+    location: "Senate Building, Bursary Unit, Room 19 (ground floor)",
+    locationGroup: "Senate Building",
+    dependsOn: [2],
+    bring: [
+      "Alumni evidence (bank teller + Tpay/Remita receipt)",
+      "Convocation receipt",
+      "Late school fees teller (if applicable)",
+      "School fees receipts + Remita receipts, 100L to 500L",
+      "Biodata written on the back of each teller (see notice board by Room 19)",
+      "Everything neatly stapled in chronological order"
+    ],
+    cost: [],
+    cushion: true,
+    tip: "Missing historical Remita receipts? Search your email inbox for 'Remita', or reprint from portal.futo.edu.ng/school_fees. You may be asked to return the next morning to pick up verified files."
+  },
+  {
+    id: 4, phase: 2,
+    title: "Laboratory Clearance",
+    short: "Get your department's senior lab technologist to certify zero damaged or unreturned laboratory apparatus.",
+    location: "Your department's laboratory (see the Lab Technologist)",
+    locationGroup: "Department / Faculty",
+    dependsOn: [1],
+    bring: ["Physical clearance form"],
+    cost: [],
+    cushion: true,
+    tip: "Confirm the designated lab technologist's schedule with your class course representative."
+  },
+  {
+    id: 5, phase: 2,
+    title: "Workshop Clearance",
+    short: "Present your department-signed form and complete the Central Workshop registration register.",
+    location: "Workshop 2, second cubicle at the extreme end",
+    locationGroup: "Workshop 2",
+    dependsOn: [1],
+    bring: ["Clearance form signed by your department"],
+    cost: [{ label: "Administrative tip (unofficial, 500 to 1,000)", amount: 1000, key: "tip" }],
+    cushion: true,
+    tip: "Not a statutory fee. Modest token tip helps fast-track register cross-checking."
+  },
+  {
+    id: 6, phase: 2,
+    title: "Student Affairs Clearance",
+    short: "Clear with the Student Affairs Division; valid SUG receipt is mandatory.",
+    location: "Student Affairs Unit, Old Registry (almost opposite the Automotive Workshop)",
+    locationGroup: "Old Registry (Student Affairs)",
+    dependsOn: [1],
+    bring: ["Clearance form", "SUG receipt"],
+    cost: [
+      { label: "Processing (with valid SUG receipt)", amount: 2000, key: "sa", conditional: "hasSUG" },
+      { label: "Processing + SUG settlement (without receipt)", amount: 4000, key: "sa_nosug", conditional: "noSUG" }
+    ],
+    cushion: true,
+    tip: "If you lost or never collected your SUG receipt, budget roughly ₦4,000 to cover dues settlement on the spot."
+  },
+  {
+    id: 7, phase: 2,
+    title: "Security Clearance (Part 1)",
+    short: "Submit your clearance form for background security verification and receive the attached validation slip.",
+    location: "FUTO Press compound, second building behind the form purchase office",
+    locationGroup: "FUTO Press area",
+    dependsOn: [1],
+    bring: ["Clearance form"],
+    cost: [{ label: "Filing tip (about 500)", amount: 500, key: "tip" }],
+    cushion: true,
+    tip: "They staple a small official paper slip to your form. SAFEGUARD THIS SLIP; you cannot complete Security Part 2 without it."
+  },
+  {
+    id: 8, phase: 2,
+    title: "Registry Clearance",
+    short: "Academic registry records endorsement.",
+    location: "Old SEET Head, top floor (2nd floor), near the FUTO roundabout",
+    locationGroup: "Old SEET Head",
+    dependsOn: [1],
+    bring: ["Clearance form", "Cash for registry processing docket"],
+    cost: [{ label: "Registry processing fee", amount: 2000, key: "reg" }],
+    cushion: true,
+    tip: "Official guide fee varies between ₦1,500 and ₦2,000. Carry ₦2,000 exact change."
+  },
+  {
+    id: 9, phase: 2,
+    title: "Library Clearance",
+    short: "Surrender your library borrower card and confirm no overdue book arrears or damage fines.",
+    location: "Main University Library (NOT the e-library wing)",
+    locationGroup: "Main Library",
+    dependsOn: [1],
+    bring: ["University library card", "Clearance form"],
+    cost: [{ label: "Attendant verification tip (about 500)", amount: 500, key: "tip" }],
+    cushion: true,
+    tip: "Check your home bookshelves beforehand for any borrowed library books from earlier years."
+  },
+  {
+    id: 10, phase: 2,
+    title: "Medical Centre Clearance",
+    short: "Health Centre audit and medical card surrender.",
+    location: "FUTO Medical Centre",
+    locationGroup: "Medical Centre",
+    dependsOn: [1],
+    bring: ["Clearance form", "FUTO Medical clinic card", "White medical payment receipt"],
+    cost: [{ label: "Medical clearance processing", amount: 2000, key: "med" }],
+    cushion: true,
+    tip: "Missing your clinic card or receipt? Visit the records registry early in the morning to avoid lengthy replacement queues."
+  },
+  {
+    id: 11, phase: 3,
+    title: "Security Clearance (Part 2)",
+    short: "Final executive security stamp. Officers detach the slip issued in Part 1.",
+    location: "Senate Building: office directly opposite you through the main gate, blue notice board",
+    locationGroup: "Senate Building",
+    dependsOn: [7],
+    bring: ["Clearance form", "Paper slip issued at Security Part 1"],
+    cost: [{ label: "Filing tip (about 1,000, optional)", amount: 1000, key: "tip" }],
+    cushion: true,
+    tip: "Convenient time to also retrieve your verified Bursary files from Room 19 if you dropped them off earlier."
+  },
+  {
+    id: 12, phase: 3,
+    title: "Dean Clearance",
+    short: "School / Faculty Dean's executive endorsement.",
+    location: "Dean's office section of your Faculty",
+    locationGroup: "Department / Faculty",
+    dependsOn: [1],
+    bring: ["Clearance form"],
+    cost: [{ label: "Dean clearance processing (about 2,000 + small tip)", amount: 2500, key: "dean" }],
+    cushion: true,
+    tip: "Faculty dean offices frequently accumulate long student queues. Arrive before 9:30 AM."
+  },
+  {
+    id: 13, phase: 3,
+    title: "Accounts & Records Clearance",
+    short: "Final audit and ledger reconciliation of your five-year school fees profile.",
+    location: "Old SEET Head, ground floor",
+    locationGroup: "Old SEET Head",
+    dependsOn: [3],
+    bring: [
+      "School fees receipts + Remita receipts, 100L to 500L",
+      "ALL documents audited & verified in Room 19",
+      "2021/2022 surcharge receipt (if applicable to your matriculation set)"
+    ],
+    cost: [{ label: "Processing tip (about 1,000)", amount: 1000, key: "tip" }],
+    cushion: true,
+    tip: "Strictly requires your Room 19 verified file. Do not queue here until Step 3 is 100% completed."
+  },
+  {
+    id: 14, phase: 4,
+    title: "Bursary Charges & Certificate Scroll",
+    short: "Pay the mandatory bursary clearance fee and convocation scroll levy.",
+    location: "Per Registry / Exams & Records directive (verify current banking instructions)",
+    locationGroup: "Portal / Bank / Remita",
+    dependsOn: [],
+    bring: ["Latest scroll payment circular", "Cash or banking app access"],
+    cost: [
+      { label: "Bursary statutory charges", amount: 2000, key: "bursary" },
+      { label: "Certificate scroll fee", amount: 5000, key: "scroll" }
+    ],
+    cushion: true,
+    tip: "Payment codes and bank details are released close to graduation. Double check the Senate notice board before making bank transfers."
+  },
+  {
+    id: 15, phase: 4,
+    title: "Collect Statement of Result",
+    short: "Verify your departmental results schedule has landed, then claim your Statement of Result.",
+    location: "Old SEET Head, topmost floor",
+    locationGroup: "Old SEET Head",
+    dependsOn: [],
+    softAfterAll: true,
+    bring: ["Fully signed & stamped clearance docket", "Student ID card", "₦5,000 collection docket fee"],
+    cost: [{ label: "Statement of Result collection charge", amount: 5000, key: "sor" }],
+    cushion: false,
+    tip: "Confirm that your department's results batch has been processed and signed off BEFORE climbing to the top floor."
+  }
+];
+
+const LOC = [
+  "FUTO Press area",
+  "Senate Building",
+  "Old SEET Head",
+  "Department / Faculty",
+  "Workshop 2",
+  "Old Registry (Student Affairs)",
+  "Main Library",
+  "Medical Centre",
+  "Portal / Bank / Remita"
+];
+
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const N = n => '₦' + Math.round(n).toLocaleString('en-NG');
+const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const KEY = "futo-clearance-v1";
+
+const fresh = () => ({
+  done: {},
+  paid: {},
+  bring: {},
+  packed: {},
+  settings: { cushion: true, lateFee: false, hasSUG: true, formBought: false },
+  view: "steps",
+  guideClosed: false,
+  milestonesFired: {},
+  sfx: true
+});
+
+let state = fresh();
+try {
+  const r = JSON.parse(localStorage.getItem(KEY));
+  if (r && typeof r === 'object') {
+    state = { ...fresh(), ...r, settings: { ...fresh().settings, ...r.settings } };
+  }
+} catch (e) {}
+
+if (!['steps', 'location', 'budget', 'bag'].includes(state.view)) state.view = 'steps';
+let st;
+const save = () => {
+  clearTimeout(st);
+  st = setTimeout(() => {
+    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+  }, 150);
+};
+
+const openSet = new Set();
+
+/* ==========================================================================
+   AUDIO SFX (Tactile paper stamp & pen clicks)
+   ========================================================================== */
+const audioFiles = {
+  snap: new Audio('assets/sfx/snap.ogg'),
+  click: new Audio('assets/sfx/click.ogg'),
+  drop: new Audio('assets/sfx/drop.ogg')
+};
+Object.values(audioFiles).forEach(a => { a.volume = 0.45; });
+
+function playSfx(type) {
+  if (!state.sfx) return;
+  try {
+    const snd = audioFiles[type];
+    if (snd) {
+      snd.currentTime = 0;
+      snd.play().catch(() => {});
+    }
+  } catch (e) {}
+}
+
+function updateSfxUi() {
+  const btn = $('#sfxBtn');
+  const lbl = $('#sfxLabel');
+  if (state.sfx) {
+    lbl.textContent = 'SFX ON';
+    btn.style.opacity = '1';
+  } else {
+    lbl.textContent = 'SFX OFF';
+    btn.style.opacity = '0.6';
+  }
+}
+
+/* ==========================================================================
+   COMPUTED HELPERS
+   ========================================================================== */
+function items(s) {
+  const x = state.settings;
+  return s.cost.filter(c => {
+    if (s.id === 1 && c.key === "form" && x.formBought) return false;
+    if (!c.conditional) return true;
+    return (c.conditional === "lateFee" && x.lateFee) ||
+           (c.conditional === "hasSUG" && x.hasSUG) ||
+           (c.conditional === "noSUG" && !x.hasSUG);
+  });
+}
+
+const cost = s => items(s).reduce((a, c) => a + c.amount, 0) + (s.cushion && state.settings.cushion ? CUSHION : 0);
+const total = () => STEPS.reduce((a, s) => a + cost(s), 0);
+const paidAmt = () => STEPS.reduce((a, s) => a + (state.paid[s.id] ? cost(s) : 0), 0);
+const cnt = () => STEPS.filter(s => state.done[s.id]).length;
+const pend = s => s.dependsOn.filter(x => !state.done[x]);
+const lastOnly = s => s.softAfterAll && STEPS.some(x => x.id < 15 && !state.done[x.id]);
+const next = () => STEPS.find(s => !state.done[s.id] && !pend(s).length) || STEPS.find(s => !state.done[s.id]);
+
+/* ==========================================================================
+   TOASTS & MILESTONES
+   ========================================================================== */
+const tq = [];
+let tb = 0;
+
+function toast(m) {
+  tq.push(m);
+  if (!tb) nx();
+}
+
+function nx() {
+  const m = tq.shift();
+  if (!m) { tb = 0; return; }
+  tb = 1;
+  const e = document.createElement('div');
+  e.className = 'toast';
+  e.textContent = m;
+  $('#toasts').append(e);
+  requestAnimationFrame(() => e.classList.add('in'));
+  setTimeout(() => {
+    e.classList.remove('in');
+    setTimeout(() => {
+      e.remove();
+      nx();
+    }, 240);
+  }, 3200);
+}
+
+function check() {
+  const n = cnt();
+  const F = (k, m) => {
+    if (state.milestonesFired[k]) return;
+    state.milestonesFired[k] = 1;
+    toast(m);
+    playSfx('drop');
+  };
+  if (n >= 1) F('m1', '★ First official stamp secured. Keep pushing.');
+  if (n >= 4) F('m25', '25% of your clearance docket completed.');
+  if (n >= 8) F('m50', 'Halfway there! 8 of 15 stamps validated.');
+  if (n >= 12) F('m75', '75% cleared. The finish line is within reach.');
+  if (n === 15) F('m100', '🎉 ALL 15 STAMPS CLEARED! Ready for Statement of Result.');
+  PHASES.forEach(p => {
+    if (STEPS.filter(s => s.phase === p.id).every(s => state.done[s.id])) {
+      F('p' + p.id, `Phase ${p.id} Complete: ${p.name}`);
+    }
+  });
+}
+
+function setDone(id, on) {
+  const s = STEPS[id - 1];
+  if (on && !state.done[id]) {
+    playSfx('snap');
+    const p = pend(s);
+    if (p.length) toast(`Heads up: Step ${p[0]} usually comes before this office.`);
+    else if (lastOnly(s)) toast('Notice: Statement of Result is collected after all other 14 stamps.');
+    state.done[id] = 1;
+    state.paid[id] = 1;
+    openSet.delete(id);
+  } else if (!on) {
+    playSfx('click');
+    delete state.done[id];
+  }
+}
+
+const CHEV = '<svg class="chev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8l5 5 5-5"/></svg>';
+
+/* ==========================================================================
+   RENDERERS
+   ========================================================================== */
+function card(s) {
+  const d = !!state.done[s.id];
+  const c = cost(s);
+  const op = openSet.has(s.id);
+  const p = d ? [] : pend(s);
+  
+  const lines = items(s).map(i => `<li><span>${esc(i.label)}</span><b>${N(i.amount)}</b></li>`).join('') +
+    (s.cushion && state.settings.cushion ? `<li><span>Cushion allowance (unofficial tips)</span><b>${N(CUSHION)}</b></li>` : '');
+    
+  const bring = s.bring.map((t, k) => `
+    <label class="sm">
+      <input type="checkbox" data-act="bring" data-k="${s.id}:${k}" ${state.bring[s.id + ':' + k] ? 'checked' : ''}>
+      <span>${esc(t)}</span>
+    </label>
+  `).join('');
+
+  return `
+  <article class="card step${d ? ' done' : ''}${op ? ' open' : ''}" id="step-${s.id}">
+    <div class="sh">
+      <label class="check" title="Stamp Step ${s.id} as Cleared">
+        <input type="checkbox" data-act="done" data-id="${s.id}" ${d ? 'checked' : ''} aria-label="Mark step ${s.id} cleared">
+      </label>
+      <button class="toggle" aria-expanded="${op}" aria-controls="d-${s.id}">
+        <span class="num">${String(s.id).padStart(2, '0')}</span>
+        <span class="ttl">${esc(s.title)}</span>
+        ${CHEV}
+      </button>
+    </div>
+    <div class="chips">
+      ${d ? '<span class="chip ok">✓ STAMP CLEARED</span>' : ''}
+      <span class="chip">${esc(s.locationGroup)}</span>
+      ${c ? `<span class="chip cost">${N(c)}</span>` : ''}
+      ${p.map(x => `<span class="chip block">Prerequisite: Step ${x}</span>`).join('')}
+      ${!d && lastOnly(s) ? '<span class="chip late">Final Stop (Collect Last)</span>' : ''}
+    </div>
+    <p class="short">${esc(s.short)}</p>
+    <div class="detail" id="d-${s.id}" ${op ? '' : 'hidden'}>
+      <div>
+        <h5>Office Location</h5>
+        <p class="where">${esc(s.location)}</p>
+      </div>
+      <div>
+        <h5>Required In Your File</h5>
+        ${bring}
+      </div>
+      <div>
+        <h5>Official Fees & Estimated Costs</h5>
+        <ul class="lines">${lines || '<li><span>Zero statutory fees</span></li>'}</ul>
+      </div>
+      <div class="tip">
+        <b>Field Advice.</b> ${esc(s.tip)}
+      </div>
+      ${c ? `
+      <label class="sw">
+        <input type="checkbox" data-act="paid" data-id="${s.id}" ${state.paid[s.id] ? 'checked' : ''}>
+        <span>Mark tellers as paid</span>
+      </label>` : ''}
+    </div>
+  </article>`;
+}
+
+function renderSteps() {
+  $('#p-steps').innerHTML = `
+    <div class="card note">
+      <span class="chip ok">PREREQUISITE SETTLED</span>
+      <div>
+        <b>Already Officially Stamped</b>
+        <span class="t">Departmental dues receipts and Head of Department Clearance are already completed.</span>
+      </div>
+    </div>` +
+    PHASES.map(p => {
+      const ss = STEPS.filter(s => s.phase === p.id);
+      const d = ss.filter(s => state.done[s.id]).length;
+      return `
+      <div class="phase">
+        <span class="eyebrow">Dossier Section ${p.id} of ${PHASES.length}</span>
+        <div class="phase-h">
+          <h3>${esc(p.name)}</h3>
+          <span class="cnt">${d} / ${ss.length} Cleared</span>
+        </div>
+        <p>${esc(p.blurb)}</p>
+        <div class="meter"><i style="width:${d / ss.length * 100}%"></i></div>
+      </div>
+      <div class="list">${ss.map(card).join('')}</div>`;
+    }).join('');
+}
+
+function renderLoc() {
+  $('#clusters').innerHTML = LOC.map(g => {
+    const ss = STEPS.filter(s => s.locationGroup === g);
+    const pd = ss.filter(s => !state.done[s.id]).length;
+    const t = ss.reduce((a, s) => a + cost(s), 0);
+    return `
+    <div class="card cl">
+      <div class="cl-h">
+        <h4>${esc(g)}</h4>
+        <span>
+          <span class="chip ${pd ? '' : 'ok'}">${pd ? pd + ' left to clear' : 'All cleared'}</span>
+          <span class="chip cost">${N(t)}</span>
+        </span>
+      </div>
+      ${ss.map(s => `
+      <label class="sm">
+        <input type="checkbox" data-act="done" data-id="${s.id}" ${state.done[s.id] ? 'checked' : ''}>
+        <span>${String(s.id).padStart(2, '0')} · ${esc(s.title)}</span>
+        <b>${N(cost(s))}</b>
+      </label>`).join('')}
+    </div>`;
+  }).join('');
+}
+
+function renderBudget() {
+  const T = total();
+  const P = paidAmt();
+  const L = T - P;
+  $('#bLeft').textContent = N(L);
+  $('#bLeft2').textContent = N(L);
+  $('#bTotal').textContent = N(T);
+  $('#bPaid').textContent = N(P);
+  $('#sLeft').textContent = N(L);
+  $('#bBar').style.width = (T ? P / T * 100 : 0) + '%';
+  $$('[data-set]').forEach(i => { i.checked = !!state.settings[i.dataset.set]; });
+  $('#bList').innerHTML = STEPS.filter(s => cost(s) > 0).map(s => `
+    <li>
+      <span class="num">${String(s.id).padStart(2, '0')}</span>
+      <span class="n">${esc(s.title)}</span>
+      <span class="a">${N(cost(s))}</span>
+      <span class="chip ${state.paid[s.id] ? 'ok' : ''}">${state.paid[s.id] ? 'PAID' : 'PENDING'}</span>
+    </li>
+  `).join('');
+}
+
+function renderBag() {
+  const m = new Map();
+  STEPS.filter(s => !state.done[s.id]).forEach(s => s.bring.forEach(t => m.set(t, (m.get(t) || 0) + 1)));
+  $('#bagList').innerHTML = m.size ? [...m].map(([t, n]) => `
+    <label class="sm">
+      <input type="checkbox" data-act="packed" data-k="${esc(t)}" ${state.packed[t] ? 'checked' : ''}>
+      <span>${esc(t)}</span>
+      <b>×${n} stops</b>
+    </label>
+  `).join('') : '<p style="padding:16px 0; font-family:var(--font-hand); font-size:1.1rem; color:var(--stamp-green)">All documents accounted for! You are fully packed.</p>';
+}
+
+function renderTop() {
+  const n = cnt();
+  const x = next();
+  $('#sDone').textContent = n + ' / 15';
+  $('#hPill').textContent = n + ' / 15';
+  $('#mBar').style.width = (n / 15 * 100) + '%';
+  $('#mAria').setAttribute('aria-valuenow', n);
+  $('#mAria').setAttribute('aria-label', `${n} of 15 clearance stamps completed`);
+  $('#sNext').textContent = x ? x.title : 'All 15 stops cleared!';
+  $('[data-act="jump"]').hidden = !x;
+  
+  const statusStamp = $('#statusStamp');
+  if (n === 15) {
+    statusStamp.textContent = 'COMPLETELY CLEARED';
+    statusStamp.style.color = 'var(--stamp-green)';
+    statusStamp.style.borderColor = 'var(--stamp-green)';
+  } else if (n > 0) {
+    statusStamp.textContent = `${Math.round(n / 15 * 100)}% CLEARED`;
+    statusStamp.style.color = 'var(--stamp-blue)';
+    statusStamp.style.borderColor = 'var(--stamp-blue)';
+  } else {
+    statusStamp.textContent = 'IN PROGRESS';
+    statusStamp.style.color = 'var(--stamp-red)';
+    statusStamp.style.borderColor = 'var(--stamp-red)';
+  }
+}
+
+function focusSel() {
+  const a = document.activeElement;
+  if (!a || !a.dataset) return null;
+  const d = a.dataset;
+  if (!(d.act || d.set)) return null;
+  let q = (a.closest('.panel') ? '#' + a.closest('.panel').id + ' ' : '') + '[data-' + (d.set ? 'set="' + d.set + '"' : 'act="' + d.act + '"') + ']';
+  if (d.id) q += '[data-id="' + d.id + '"]';
+  if (d.k) q += '[data-k="' + CSS.escape(d.k) + '"]';
+  return q;
+}
+
+function render() {
+  const q = focusSel();
+  renderSteps();
+  renderLoc();
+  renderBudget();
+  renderBag();
+  renderTop();
+  updateSfxUi();
+  if (q) {
+    try {
+      const e = document.querySelector(q);
+      if (e) e.focus({ preventScroll: true });
+    } catch (x) {}
+  }
+}
+
+function setTab(v, scroll = true) {
+  state.view = v;
+  $$('[data-tab]').forEach(b => b.setAttribute('aria-selected', b.dataset.tab === v));
+  ['steps', 'location', 'budget', 'bag'].forEach(k => {
+    $('#p-' + k).hidden = k !== v;
+  });
+  save();
+  if (scroll) {
+    const y = $('#panels').getBoundingClientRect().top;
+    if (y < 0) scrollTo({ top: scrollY + y - 130 });
+  }
+}
+
+/* ==========================================================================
+   EVENT LISTENERS
+   ========================================================================== */
+addEventListener('change', e => {
+  const t = e.target;
+  const a = t.dataset.act;
+  if (!a && !t.dataset.set) return;
+
+  if (t.dataset.set) {
+    state.settings[t.dataset.set] = t.checked;
+    playSfx('click');
+    if (t.dataset.set === 'formBought' && t.checked) setDone(1, true);
+  } else if (a === 'done') {
+    setDone(+t.dataset.id, t.checked);
+  } else if (a === 'paid') {
+    playSfx('click');
+    t.checked ? state.paid[t.dataset.id] = 1 : delete state.paid[t.dataset.id];
+  } else if (a === 'bring') {
+    playSfx('click');
+    state.bring[t.dataset.k] = t.checked || undefined;
+  } else if (a === 'packed') {
+    playSfx('click');
+    state.packed[t.dataset.k] = t.checked || undefined;
+  }
+  
+  check();
+  save();
+  render();
+});
+
+function jump() {
+  const n = next();
+  if (!n) return;
+  setTab('steps', false);
+  openSet.add(n.id);
+  render();
+  const el = $('#step-' + n.id);
+  if (el) {
+    el.scrollIntoView({ block: 'center' });
+    el.classList.add('flash');
+    playSfx('drop');
+    setTimeout(() => el.classList.remove('flash'), 1400);
+  }
+}
+
+let armed = 0;
+addEventListener('click', e => {
+  const t = e.target;
+
+  // Sound toggle button
+  if (t.closest('#sfxBtn')) {
+    state.sfx = !state.sfx;
+    save();
+    updateSfxUi();
+    if (state.sfx) playSfx('snap');
+    return;
+  }
+
+  // Accordion toggle
+  const tg = t.closest('.toggle');
+  if (tg) {
+    playSfx('click');
+    const c = tg.closest('.step');
+    const id = +c.id.slice(5);
+    const o = !openSet.has(id);
+    o ? openSet.add(id) : openSet.delete(id);
+    c.classList.toggle('open', o);
+    tg.setAttribute('aria-expanded', o);
+    $('#d-' + id).hidden = !o;
+    return;
+  }
+
+  // Tabs
+  const tb = t.closest('[data-tab]');
+  if (tb) {
+    playSfx('click');
+    setTab(tb.dataset.tab);
+    return;
+  }
+
+  // Action buttons
+  const b = t.closest('[data-act]');
+  if (!b || b.tagName === 'INPUT') return;
+  const a = b.dataset.act;
+
+  if (a === 'jump') jump();
+  if (a === 'top') {
+    playSfx('click');
+    scrollTo({ top: 0 });
+  }
+  if (a === 'unpack') {
+    playSfx('click');
+    state.packed = {};
+    save();
+    renderBag();
+    toast('Packed ticks cleared');
+  }
+  if (a === 'copy') {
+    playSfx('click');
+    const m = `FUTO Final Year Clearance Docket: ${cnt()}/15 stamps cleared. Settled ${N(paidAmt())} of ${N(total())} estimated balance.`;
+    try {
+      navigator.clipboard.writeText(m).then(
+        () => toast('Docket summary copied to clipboard'),
+        () => toast(m)
+      );
+    } catch (x) {
+      toast(m);
+    }
+  }
+  if (a === 'reset') {
+    if (!armed) {
+      armed = 1;
+      b.classList.add('arm');
+      b.textContent = 'Tap again to erase clearance docket';
+      playSfx('click');
+      setTimeout(() => {
+        armed = 0;
+        b.classList.remove('arm');
+        b.textContent = 'Reset clearance record';
+      }, 4000);
+      return;
+    }
+    armed = 0;
+    b.classList.remove('arm');
+    b.textContent = 'Reset clearance record';
+    try { localStorage.removeItem(KEY); } catch (x) {}
+    state = fresh();
+    openSet.clear();
+    $('#guide').open = true;
+    playSfx('drop');
+    render();
+    setTab('steps', false);
+    scrollTo({ top: 0 });
+    toast('Clearance dossier reset');
+  }
+});
+
+$('#guide').addEventListener('toggle', e => {
+  state.guideClosed = !e.target.open;
+  save();
+});
+$('#guide').open = !state.guideClosed;
+
+setTab(state.view, false);
+render();
+</script>
+</body>
+</html>
