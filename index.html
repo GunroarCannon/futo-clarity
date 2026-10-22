@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#ebd9b5">
+<meta name="theme-color" content="#f5f0e6">
 <meta name="description" content="FUTO Final Year Clearance Tracker & Dossier - Track all 15 university clearance sign-offs, offices, fees, and requirements in authentic paper style.">
 <title>FUTO Final Year Clearance Tracker · Official Dossier</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,34 +11,37 @@
 <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=Kalam:wght@400;700&family=Permanent+Marker&family=Special+Elite&display=swap" rel="stylesheet">
 <style>
 /* ==========================================================================
-   FUTO CLEARANCE DOSSIER - PAPER & INK AESTHETIC
-   Inspired by authentic Nigerian university clearance dockets, rubber stamps,
-   Manila file folders, bank deposit tellers, and ballpoint pen annotations.
+   FUTO CLEARANCE DOSSIER - REFINED PAPER & INK AESTHETIC
+   Clean, light, authentic university clearance docket.
+   The paper texture is subtle and behind the desk surface only.
+   The scrollable content and cards remain crisp, clean, and legible.
    ========================================================================== */
 
 :root {
-  --ink: #191410;
-  --ink-soft: #4a3b30;
-  --ink-faint: #7a6858;
-  --paper: #fbf7ec;
-  --paper-card: #fffdf8;
-  --paper-folder: #e8d5b0;
-  --paper-folder-dark: #dcbe8e;
-  --paper-yellow: #fef8d3;
-  --paper-blue: #e8f0f8;
+  --ink: #1e1915;
+  --ink-soft: #4f4236;
+  --ink-faint: #7d6e60;
+  
+  --bg-desk: #f4eee2;
+  --paper: #faf6ee;
+  --paper-card: #ffffff;
+  --paper-folder: #ece1cc;
+  --paper-folder-tab: #e4d5bc;
+  --paper-yellow: #fef9db;
+  --paper-blue: #edf4fa;
   --paper-red: #fcedeb;
   
-  --line: #d8c4a0;
-  --line-strong: #191410;
+  --line: #e3d8c4;
+  --line-strong: #1e1915;
   
   /* Stamp Inks */
   --stamp-green: #14683d;
-  --stamp-green-bg: #e3f2e9;
-  --stamp-red: #b32a2a;
-  --stamp-red-bg: #fbe6e6;
-  --stamp-blue: #1b5387;
+  --stamp-green-bg: #e5f3eb;
+  --stamp-red: #ad2828;
+  --stamp-red-bg: #fae8e8;
+  --stamp-blue: #185285;
   --stamp-blue-bg: #e6f0fa;
-  --stamp-amber: #8e5804;
+  --stamp-amber: #8a5604;
   --stamp-amber-bg: #fcf1db;
   
   --font-body: 'Figtree', system-ui, -apple-system, sans-serif;
@@ -48,10 +51,10 @@
   --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
   
   --r: 6px;
-  --border-ink: 2px solid var(--ink);
-  --shadow-paper: 3px 3px 0 var(--ink);
-  --shadow-paper-lg: 4px 5px 0 var(--ink);
-  --shadow-paper-sm: 2px 2px 0 var(--ink);
+  --border-ink: 1.5px solid var(--ink);
+  --shadow-paper: 2px 2px 0 var(--ink);
+  --shadow-paper-lg: 3px 3px 0 var(--ink);
+  --shadow-paper-sm: 1.5px 1.5px 0 var(--ink);
   
   color-scheme: light;
 }
@@ -63,27 +66,27 @@ html {
 }
 body {
   margin: 0;
-  background-color: #ebd9b5;
+  background-color: var(--bg-desk);
   background-image: 
-    radial-gradient(ellipse at 50% 15%, rgba(255, 252, 240, 0.75) 0%, rgba(242, 224, 192, 0.45) 55%),
-    radial-gradient(ellipse at 50% 85%, rgba(145, 100, 50, 0.18) 0%, rgba(85, 55, 20, 0.28) 100%);
+    radial-gradient(ellipse at 50% 10%, rgba(255, 255, 255, 0.6) 0%, rgba(244, 238, 226, 0.3) 60%),
+    radial-gradient(ellipse at 50% 90%, rgba(210, 195, 170, 0.15) 0%, rgba(180, 160, 130, 0.12) 100%);
   color: var(--ink);
-  font: 400 16px/1.55 var(--font-body);
+  font: 400 15.5px/1.55 var(--font-body);
   min-height: 100vh;
   position: relative;
   -webkit-text-size-adjust: 100%;
 }
 
-/* Wrinkled Paper Overlay across the entire viewport */
+/* Subtle Wrinkled Paper Texture ONLY on background desk, BEHIND scrollable cards */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: 99;
+  z-index: -1;
   pointer-events: none;
   background: url('assets/wrinkled-paper.jpg') center / cover;
   mix-blend-mode: multiply;
-  opacity: 0.65;
+  opacity: 0.22;
 }
 
 h1, h2, h3, h4, h5, p, ul, ol, dl, dd { margin: 0; }
@@ -92,8 +95,8 @@ a { color: var(--stamp-blue); text-decoration-thickness: 1.5px; text-underline-o
 a:hover { color: var(--ink); }
 
 :focus-visible {
-  outline: 3px dashed var(--stamp-blue);
-  outline-offset: 3px;
+  outline: 2.5px dashed var(--stamp-blue);
+  outline-offset: 2px;
 }
 
 .in {
@@ -110,7 +113,7 @@ a:hover { color: var(--ink); }
 .eyebrow {
   font-family: var(--font-typewriter);
   font-size: 0.72rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink-soft);
 }
@@ -120,19 +123,19 @@ a:hover { color: var(--ink); }
 }
 
 /* ==========================================================================
-   TOP FILE FOLDER / HEADER
+   TOP STICKY HEADER (Always shows Cleared Stamps & Money Left to Pay)
    ========================================================================== */
 .top {
   position: sticky;
   top: 0;
   z-index: 40;
   background: var(--paper-folder);
-  border-bottom: 2px solid var(--ink);
-  box-shadow: 0 4px 0 rgba(26,20,16,0.18), 0 8px 18px rgba(60,40,15,0.12);
+  border-bottom: 1.5px solid var(--ink);
+  box-shadow: 0 2px 0 rgba(30, 25, 21, 0.1), 0 4px 12px rgba(60, 45, 25, 0.08);
 }
 
 .top-inner {
-  padding-top: max(10px, env(safe-area-inset-top, 0px));
+  padding-top: max(8px, env(safe-area-inset-top, 0px));
 }
 
 .official-crest-bar {
@@ -141,21 +144,21 @@ a:hover { color: var(--ink); }
   justify-content: space-between;
   gap: 8px;
   padding-bottom: 4px;
-  border-bottom: 1px dashed rgba(25, 20, 16, 0.35);
+  border-bottom: 1px dashed rgba(30, 25, 21, 0.25);
 }
 .docket-serial {
   font-family: var(--font-typewriter);
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ink-soft);
 }
 .sfx-toggle {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   padding: 2px 7px;
   border: 1.5px solid var(--ink);
   border-radius: 4px;
@@ -169,14 +172,14 @@ a:hover { color: var(--ink); }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  padding-block: 8px 4px;
+  gap: 10px;
+  padding-block: 7px 4px;
 }
 .brand { min-width: 0; }
 .brand-sub {
   display: block;
   font-family: var(--font-typewriter);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--stamp-blue);
@@ -185,43 +188,76 @@ a:hover { color: var(--ink); }
 .brand b {
   display: block;
   font-family: var(--font-typewriter);
-  font-size: 1.15rem;
+  font-size: 1.12rem;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.01em;
   color: var(--ink);
 }
-.brand span {
+.brand-session {
+  display: block;
   font-family: var(--font-hand);
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   color: var(--ink-soft);
 }
 
-/* Rubber Stamp Docket Pill */
+/* Header Badges container: Money Left To Pay + Stamps Cleared */
+.header-badges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: none;
+}
+
+/* Rubber Stamp Docket Pills */
 .stamp-pill {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4px 10px;
-  border: 2px solid var(--stamp-green);
-  border-radius: 5px;
+  padding: 3px 9px;
+  border: 1.5px solid var(--stamp-green);
+  border-radius: 4px;
   background: var(--stamp-green-bg);
   color: var(--stamp-green);
-  box-shadow: 2px 2px 0 var(--ink);
-  transform: rotate(-1.5deg);
+  box-shadow: 1.5px 1.5px 0 var(--ink);
+  transform: rotate(-1deg);
   white-space: nowrap;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
 }
 .stamp-pill .sp-lbl {
   font-family: var(--font-stamp);
-  font-size: 0.62rem;
-  letter-spacing: 0.12em;
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
   line-height: 1;
 }
 .stamp-pill .sp-val {
   font-family: var(--font-typewriter);
-  font-size: 1rem;
+  font-size: 0.96rem;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.15;
+}
+
+/* Money Pill specifically for the outstanding fees left to pay */
+.stamp-pill.money-pill {
+  border-color: var(--stamp-blue);
+  background: var(--stamp-blue-bg);
+  color: var(--stamp-blue);
+  transform: rotate(1deg);
+}
+.stamp-pill.money-pill.cleared {
+  border-color: var(--stamp-green);
+  background: var(--stamp-green-bg);
+  color: var(--stamp-green);
+}
+
+@media(max-width: 520px) {
+  .brand b { font-size: 0.98rem; }
+  .brand-sub { font-size: 0.6rem; }
+  .brand-session { display: none; }
+  .header-badges { gap: 5px; }
+  .stamp-pill { padding: 2px 6px; }
+  .stamp-pill .sp-val { font-size: 0.86rem; }
+  .stamp-pill .sp-lbl { font-size: 0.52rem; }
 }
 
 /* Physical Folder Tabs */
@@ -230,102 +266,99 @@ a:hover { color: var(--ink); }
   gap: 4px;
   overflow-x: auto;
   scrollbar-width: none;
-  padding-top: 6px;
-  margin-bottom: -2px;
+  padding-top: 5px;
+  margin-bottom: -1.5px;
 }
 .tabs::-webkit-scrollbar { display: none; }
 .tab {
   flex: 1 0 auto;
-  min-height: 38px;
-  padding: 6px 14px 4px;
-  background: #dbbe8e;
-  border: 2px solid var(--ink);
-  border-bottom: 2px solid var(--ink);
-  border-radius: 8px 8px 0 0;
+  min-height: 36px;
+  padding: 6px 12px 4px;
+  background: var(--paper-folder-tab);
+  border: 1.5px solid var(--ink);
+  border-bottom: 1.5px solid var(--ink);
+  border-radius: 7px 7px 0 0;
   font-family: var(--font-typewriter);
   font-weight: 700;
-  font-size: 0.86rem;
-  letter-spacing: 0.04em;
+  font-size: 0.84rem;
+  letter-spacing: 0.03em;
   color: var(--ink-soft);
   white-space: nowrap;
   position: relative;
-  transition: background 0.15s, color 0.15s, transform 0.15s;
+  transition: background 0.15s, color 0.15s;
 }
 .tab:hover {
-  background: #ecd6ad;
+  background: #ecdcc1;
   color: var(--ink);
 }
 .tab[aria-selected="true"] {
   background: var(--paper-card);
   color: var(--ink);
-  border-bottom: 2px solid var(--paper-card);
+  border-bottom: 1.5px solid var(--paper-card);
   z-index: 2;
-  box-shadow: 0 -2px 0 rgba(26,20,16,0.15);
 }
 
 /* ==========================================================================
-   MAIN CONTENT & PAPER CARDS
+   SCROLLABLE MAIN CONTENT & CRISP PAPER CARDS
+   (Free of wrinkled overlays for clean readability)
    ========================================================================== */
 main {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  padding-block: 20px 24px;
+  gap: 16px;
+  padding-block: 18px 22px;
 }
 
-/* Physical Paper Sheet / Card */
+/* Clean, crisp document card */
 .card {
   background: var(--paper-card);
-  border: 2px solid var(--ink);
-  border-radius: 4px 8px 5px 9px;
-  box-shadow: var(--shadow-paper), 0 8px 18px rgba(50, 35, 15, 0.1);
+  border: 1.5px solid var(--ink);
+  border-radius: 4px 6px 4px 6px;
+  box-shadow: var(--shadow-paper), 0 3px 10px rgba(50, 35, 15, 0.05);
   position: relative;
-  background-image: 
-    linear-gradient(rgba(240, 230, 205, 0.15) 1px, transparent 1px);
-  background-size: 100% 28px;
 }
 
-/* Decorative simulated brass paperclip on featured cards */
+/* Brass paperclip visual on overview */
 .has-clip::after {
   content: "";
   position: absolute;
-  top: -10px;
-  right: 28px;
-  width: 14px;
-  height: 34px;
-  border: 2.5px solid #6b5b47;
+  top: -8px;
+  right: 24px;
+  width: 12px;
+  height: 28px;
+  border: 2px solid #7c6b55;
   border-bottom: none;
-  border-radius: 7px 7px 0 0;
+  border-radius: 6px 6px 0 0;
   background: transparent;
-  box-shadow: 1px 1px 0 rgba(0,0,0,0.25);
+  box-shadow: 1px 1px 0 rgba(0,0,0,0.18);
   pointer-events: none;
   z-index: 5;
 }
 
-/* Physical Buttons */
+/* Tactile Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
-  min-height: 42px;
-  padding: 0 16px;
-  border: 2px solid var(--ink);
-  border-radius: 4px 7px 4px 6px;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1.5px solid var(--ink);
+  border-radius: 4px 6px 4px 5px;
   background: var(--paper-folder);
   font-family: var(--font-typewriter);
   font-weight: 700;
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   letter-spacing: 0.02em;
   color: var(--ink);
   box-shadow: var(--shadow-paper-sm);
   transition: transform 0.1s, box-shadow 0.1s, background 0.15s;
 }
 .btn:hover {
-  background: #f0e0be;
+  background: #f4e8d2;
 }
 .btn:active {
-  transform: translate(2px, 2px);
+  transform: translate(1.5px, 1.5px);
   box-shadow: none;
 }
 .btn.primary {
@@ -334,15 +367,7 @@ main {
   color: var(--paper);
 }
 .btn.primary:hover {
-  background: #2b231d;
-}
-.btn.stamp-btn {
-  background: var(--stamp-green);
-  border-color: var(--ink);
-  color: #fff;
-}
-.btn.stamp-btn:hover {
-  background: #0e502e;
+  background: #2e2620;
 }
 .btn.danger {
   background: var(--paper-red);
@@ -350,7 +375,7 @@ main {
   border-color: var(--stamp-red);
 }
 .btn.danger:hover {
-  background: #f9d5d5;
+  background: #f7dede;
 }
 .btn.danger.arm {
   background: var(--stamp-red);
@@ -358,15 +383,15 @@ main {
   border-color: var(--ink);
 }
 
-/* Ink Hash-mark Progress Meter */
+/* Progress Meter */
 .meter {
-  height: 12px;
-  border: 2px solid var(--ink);
-  border-radius: 4px;
-  background: #eadeca;
+  height: 10px;
+  border: 1.5px solid var(--ink);
+  border-radius: 3px;
+  background: #ebe0ce;
   overflow: hidden;
   position: relative;
-  box-shadow: inset 0 2px 3px rgba(26,20,16,0.18);
+  box-shadow: inset 0 1px 2px rgba(30, 25, 21, 0.12);
 }
 .meter i {
   display: block;
@@ -374,10 +399,10 @@ main {
   background: var(--stamp-green);
   background-image: repeating-linear-gradient(
     -45deg,
-    rgba(255, 255, 255, 0.25) 0px,
-    rgba(255, 255, 255, 0.25) 6px,
-    transparent 6px,
-    transparent 12px
+    rgba(255, 255, 255, 0.22) 0px,
+    rgba(255, 255, 255, 0.22) 5px,
+    transparent 5px,
+    transparent 10px
   );
   transition: width 0.35s ease-out;
 }
@@ -388,15 +413,15 @@ main {
   align-items: center;
   gap: 4px;
   font-family: var(--font-typewriter);
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   font-weight: 700;
   line-height: 1.25;
-  padding: 3px 8px;
-  border: 1.8px solid var(--ink);
-  border-radius: 3px 5px 3px 4px;
+  padding: 2.5px 7px;
+  border: 1.5px solid var(--ink);
+  border-radius: 3px;
   background: var(--paper-folder);
   color: var(--ink);
-  box-shadow: 1px 1px 0 rgba(26,20,16,0.4);
+  box-shadow: 1px 1px 0 rgba(30, 25, 21, 0.3);
 }
 .chip.cost {
   background: var(--stamp-blue-bg);
@@ -435,12 +460,12 @@ input[type=checkbox] {
   flex: none;
 }
 .check input {
-  width: 28px;
-  height: 28px;
-  border: 2.2px solid var(--ink);
-  border-radius: 4px 6px 3px 5px;
-  background: #fffdf7;
-  box-shadow: 2px 2px 0 rgba(26,20,16,0.4);
+  width: 26px;
+  height: 26px;
+  border: 1.8px solid var(--ink);
+  border-radius: 4px;
+  background: #ffffff;
+  box-shadow: 1.5px 1.5px 0 rgba(30, 25, 21, 0.3);
   transition: transform 0.12s, background 0.12s;
 }
 .check input:hover {
@@ -449,23 +474,23 @@ input[type=checkbox] {
 .check input:checked {
   background: var(--stamp-green);
   border-color: var(--ink);
-  animation: stampPop 0.22s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  animation: stampPop 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
 .check input:checked::after {
   content: "";
   position: absolute;
-  left: 9px;
+  left: 8px;
   top: 3px;
-  width: 7px;
-  height: 14px;
-  border: solid #fffdf8;
-  border-width: 0 3px 3px 0;
+  width: 6px;
+  height: 12px;
+  border: solid #ffffff;
+  border-width: 0 2.5px 2.5px 0;
   transform: rotate(45deg);
 }
 
 @keyframes stampPop {
-  0% { transform: scale(0.7) rotate(-8deg); }
-  60% { transform: scale(1.15) rotate(4deg); }
+  0% { transform: scale(0.7) rotate(-6deg); }
+  60% { transform: scale(1.12) rotate(3deg); }
   100% { transform: scale(1) rotate(0deg); }
 }
 
@@ -474,18 +499,18 @@ input[type=checkbox] {
   display: flex;
   align-items: center;
   gap: 12px;
-  min-height: 44px;
+  min-height: 42px;
   cursor: pointer;
   font-size: 0.94rem;
   font-family: var(--font-body);
 }
 .sw input {
-  width: 44px;
-  height: 24px;
-  border: 2px solid var(--ink);
+  width: 42px;
+  height: 22px;
+  border: 1.5px solid var(--ink);
   border-radius: 99px;
-  background: #d8c6a5;
-  box-shadow: 1px 1px 0 rgba(26,20,16,0.5);
+  background: #d8caba;
+  box-shadow: 1px 1px 0 rgba(30, 25, 21, 0.35);
   transition: background 0.15s;
 }
 .sw input::after {
@@ -493,9 +518,9 @@ input[type=checkbox] {
   position: absolute;
   top: 1px;
   left: 2px;
-  width: 18px;
-  height: 18px;
-  border: 1.5px solid var(--ink);
+  width: 16px;
+  height: 16px;
+  border: 1.2px solid var(--ink);
   border-radius: 50%;
   background: var(--paper-card);
   transition: transform 0.15s;
@@ -504,7 +529,7 @@ input[type=checkbox] {
   background: var(--stamp-green);
 }
 .sw input:checked::after {
-  transform: translateX(19px);
+  transform: translateX(18px);
   background: #fff;
 }
 
@@ -512,31 +537,30 @@ input[type=checkbox] {
    OVERVIEW CARD (OFFICIAL CLEARANCE STATUS)
    ========================================================================== */
 .ov {
-  padding: 18px 20px;
+  padding: 16px 18px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  border: 2px solid var(--ink);
+  gap: 14px;
 }
 .ov-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 2px dashed var(--line);
-  padding-bottom: 10px;
+  border-bottom: 1.5px dashed var(--line);
+  padding-bottom: 8px;
 }
 .ov-title {
   font-family: var(--font-typewriter);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 .ov-stamp {
   font-family: var(--font-stamp);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--stamp-red);
-  transform: rotate(-3deg);
+  transform: rotate(-2.5deg);
   border: 1.5px solid var(--stamp-red);
   padding: 1px 6px;
   border-radius: 3px;
@@ -545,23 +569,23 @@ input[type=checkbox] {
 .ov-top {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 14px;
 }
 .ov-box {
   background: var(--paper);
-  border: 1.8px solid var(--ink);
+  border: 1.5px solid var(--line-strong);
   border-radius: 4px;
-  padding: 10px 14px;
-  box-shadow: 2px 2px 0 rgba(26,20,16,0.3);
+  padding: 9px 12px;
+  box-shadow: 1.5px 1.5px 0 rgba(30, 25, 21, 0.2);
 }
 .ov-box .v {
   display: block;
   font-family: var(--font-typewriter);
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   font-weight: 700;
   line-height: 1.15;
   color: var(--ink);
-  margin-top: 3px;
+  margin-top: 2px;
 }
 
 .next {
@@ -570,8 +594,8 @@ input[type=checkbox] {
   justify-content: space-between;
   gap: 12px;
   flex-wrap: wrap;
-  padding-top: 14px;
-  border-top: 2px dashed var(--line);
+  padding-top: 12px;
+  border-top: 1.5px dashed var(--line);
 }
 .next div {
   min-width: 0;
@@ -581,7 +605,7 @@ input[type=checkbox] {
   display: block;
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   margin-top: 2px;
 }
 
@@ -594,12 +618,12 @@ input[type=checkbox] {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 16px 18px;
-  min-height: 54px;
+  padding: 14px 16px;
+  min-height: 50px;
   cursor: pointer;
   font-family: var(--font-typewriter);
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.96rem;
   border-radius: inherit;
 }
 .guide summary::-webkit-details-marker { display: none; }
@@ -607,33 +631,33 @@ input[type=checkbox] {
   display: block;
   font-family: var(--font-hand);
   font-weight: 400;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--ink-soft);
   margin-top: 2px;
 }
 .guide summary svg {
   flex: none;
-  width: 22px;
-  height: 22px;
-  stroke-width: 2.5;
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.2;
   transition: transform 0.2s;
 }
 .guide[open] summary svg { transform: rotate(180deg); }
 
 .gb {
-  padding: 0 18px 20px;
+  padding: 0 16px 18px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   border-top: 1px dashed var(--line);
-  padding-top: 16px;
+  padding-top: 14px;
 }
 .gb h4 {
   font-family: var(--font-typewriter);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   color: var(--ink);
 }
 .how {
@@ -641,29 +665,29 @@ input[type=checkbox] {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   counter-reset: s;
 }
 .how li {
   display: grid;
-  grid-template-columns: 30px 1fr;
-  gap: 12px;
+  grid-template-columns: 28px 1fr;
+  gap: 10px;
   counter-increment: s;
-  font-size: 0.95rem;
+  font-size: 0.94rem;
 }
 .how li::before {
   content: counter(s);
   display: grid;
   place-items: center;
-  width: 30px;
-  height: 30px;
-  border: 2px solid var(--ink);
+  width: 28px;
+  height: 28px;
+  border: 1.5px solid var(--ink);
   border-radius: 50%;
   background: var(--paper-folder);
   color: var(--ink);
   font-family: var(--font-typewriter);
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   box-shadow: 1px 1px 0 var(--ink);
 }
 .how b { display: block; font-weight: 700; }
@@ -672,12 +696,12 @@ input[type=checkbox] {
 .gl {
   display: grid;
   grid-template-columns: 140px 1fr;
-  gap: 8px 16px;
+  gap: 6px 14px;
   font-size: 0.92rem;
   background: var(--paper);
-  border: 1.5px solid var(--line);
+  border: 1.2px solid var(--line);
   border-radius: 4px;
-  padding: 12px 14px;
+  padding: 10px 12px;
 }
 .gl dt {
   font-family: var(--font-typewriter);
@@ -687,7 +711,7 @@ input[type=checkbox] {
 .gl dd { color: var(--ink-soft); }
 @media(max-width: 500px) {
   .gl { grid-template-columns: 1fr; gap: 4px; }
-  .gl dd { margin-bottom: 8px; }
+  .gl dd { margin-bottom: 6px; }
 }
 
 /* ==========================================================================
@@ -696,23 +720,23 @@ input[type=checkbox] {
 .panel {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
 .note {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px 16px;
+  padding: 12px 14px;
   font-size: 0.92rem;
-  border: 2px dashed var(--stamp-green);
+  border: 1.5px dashed var(--stamp-green);
   background: var(--stamp-green-bg);
 }
 .note span.t { display: block; color: var(--ink-soft); font-size: 0.86rem; }
 
 /* Phase Header */
 .phase {
-  margin-top: 14px;
+  margin-top: 12px;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -725,25 +749,25 @@ input[type=checkbox] {
 }
 .phase h3 {
   font-family: var(--font-typewriter);
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   line-height: 1.2;
 }
 .phase .cnt {
   font-family: var(--font-mono);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--ink-soft);
 }
 .phase p {
   font-family: var(--font-hand);
-  font-size: 1.02rem;
+  font-size: 0.98rem;
   color: var(--ink-soft);
 }
 
 .list {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
 }
 
 /* Step Card */
@@ -751,28 +775,15 @@ input[type=checkbox] {
   transition: transform 0.15s, box-shadow 0.15s, background 0.2s;
 }
 .step.done {
-  background: #f4efe1;
-  border-color: #3b3228;
-}
-.step.done::before {
-  content: "OFFICIALLY CLEARED";
-  position: absolute;
-  right: 18px;
-  top: 50px;
-  font-family: var(--font-stamp);
-  font-size: 1.4rem;
-  letter-spacing: 0.12em;
-  color: rgba(20, 104, 61, 0.15);
-  transform: rotate(-12deg);
-  pointer-events: none;
-  z-index: 1;
+  background: #fbf9f4;
+  border-color: #554433;
 }
 .step.done .ttl {
   color: var(--ink-soft);
 }
 .step.flash {
-  box-shadow: 0 0 0 4px var(--stamp-blue), var(--shadow-paper-lg);
-  transform: scale(1.01);
+  box-shadow: 0 0 0 3px var(--stamp-blue), var(--shadow-paper-lg);
+  transform: scale(1.008);
 }
 
 .sh {
@@ -783,8 +794,8 @@ input[type=checkbox] {
 .check {
   display: grid;
   place-items: center;
-  width: 54px;
-  height: 56px;
+  width: 50px;
+  height: 52px;
   flex: none;
   cursor: pointer;
 }
@@ -794,19 +805,19 @@ input[type=checkbox] {
   min-width: 0;
   display: flex;
   align-items: center;
-  gap: 12px;
-  min-height: 56px;
-  padding: 6px 0;
+  gap: 10px;
+  min-height: 52px;
+  padding: 4px 0;
   text-align: left;
 }
 .num {
   font-family: var(--font-typewriter);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: var(--stamp-blue);
   flex: none;
   padding: 2px 6px;
-  border: 1.5px solid var(--stamp-blue);
+  border: 1.2px solid var(--stamp-blue);
   border-radius: 4px;
   background: var(--paper-blue);
 }
@@ -815,13 +826,13 @@ input[type=checkbox] {
   min-width: 0;
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   line-height: 1.3;
 }
 .chev {
   flex: none;
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   color: var(--ink-soft);
   transition: transform 0.2s;
 }
@@ -831,26 +842,26 @@ input[type=checkbox] {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  padding: 0 16px 6px 54px;
+  padding: 0 14px 6px 50px;
 }
 .short {
-  padding: 2px 16px 14px 54px;
-  font-size: 0.95rem;
+  padding: 2px 14px 12px 50px;
+  font-size: 0.94rem;
   color: var(--ink-soft);
   line-height: 1.45;
 }
 
 /* Step Accordion Detail */
 .detail {
-  border-top: 2px dashed var(--line);
-  padding: 16px 18px 18px;
+  border-top: 1.2px dashed var(--line);
+  padding: 14px 16px 16px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  background: rgba(250, 246, 235, 0.6);
+  gap: 12px;
+  background: #fdfbf7;
 }
 .detail h5 {
-  margin: 0 0 6px;
+  margin: 0 0 5px;
   font-family: var(--font-typewriter);
   font-size: 0.72rem;
   letter-spacing: 0.08em;
@@ -858,7 +869,7 @@ input[type=checkbox] {
   color: var(--ink-soft);
 }
 .where {
-  font-size: 0.95rem;
+  font-size: 0.94rem;
   font-weight: 500;
 }
 
@@ -866,18 +877,18 @@ input[type=checkbox] {
 .sm {
   display: flex;
   align-items: center;
-  gap: 12px;
-  min-height: 38px;
+  gap: 10px;
+  min-height: 36px;
   cursor: pointer;
-  font-size: 0.94rem;
+  font-size: 0.93rem;
 }
 .sm input {
-  width: 20px;
-  height: 20px;
-  border: 2px solid var(--ink);
-  border-radius: 4px;
-  background: #fffdf8;
-  box-shadow: 1px 1px 0 rgba(26,20,16,0.3);
+  width: 19px;
+  height: 19px;
+  border: 1.6px solid var(--ink);
+  border-radius: 3px;
+  background: #ffffff;
+  box-shadow: 1px 1px 0 rgba(30, 25, 21, 0.25);
 }
 .sm input:checked {
   background: var(--stamp-blue);
@@ -888,16 +899,16 @@ input[type=checkbox] {
   position: absolute;
   left: 5px;
   top: 1px;
-  width: 5px;
-  height: 10px;
+  width: 4px;
+  height: 9px;
   border: solid #fff;
-  border-width: 0 2.5px 2.5px 0;
+  border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
 .sm b {
   margin-left: auto;
   font-family: var(--font-mono);
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   color: var(--ink-soft);
 }
 .sm:has(input:checked) > span {
@@ -912,15 +923,15 @@ input[type=checkbox] {
   padding: 0;
   font-size: 0.92rem;
   background: var(--paper-card);
-  border: 1.5px solid var(--line);
+  border: 1.2px solid var(--line);
   border-radius: 4px;
-  padding: 4px 12px;
+  padding: 3px 10px;
 }
 .lines li {
   display: flex;
   justify-content: space-between;
   gap: 12px;
-  padding: 8px 0;
+  padding: 7px 0;
   border-bottom: 1px dashed var(--line);
 }
 .lines li:last-child { border-bottom: 0; }
@@ -930,35 +941,34 @@ input[type=checkbox] {
   white-space: nowrap;
 }
 
-/* Sticky Post-It Note / Tip Memo */
+/* Post-It Note / Field Tip */
 .tip {
   background: var(--paper-yellow);
-  border: 1.8px solid #c9b068;
-  border-radius: 3px 6px 4px 7px;
-  padding: 12px 16px;
+  border: 1.5px solid #d8c382;
+  border-radius: 3px 5px 3px 5px;
+  padding: 10px 14px;
   font-family: var(--font-hand);
-  font-size: 1.05rem;
+  font-size: 1rem;
   line-height: 1.45;
   color: #3b2a0c;
-  box-shadow: 2px 3px 0 rgba(100, 75, 20, 0.15);
+  box-shadow: 1.5px 2px 0 rgba(90, 70, 20, 0.12);
   position: relative;
-  margin-top: 6px;
+  margin-top: 4px;
 }
 .tip::before {
   content: "";
   position: absolute;
-  top: -7px;
-  left: 24px;
-  width: 48px;
-  height: 14px;
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px dashed rgba(160, 140, 90, 0.6);
+  top: -6px;
+  left: 20px;
+  width: 42px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px dashed rgba(160, 140, 90, 0.5);
   transform: rotate(-1.5deg);
-  box-shadow: 0 1px 2px rgba(0,0,0,0.06);
 }
 .tip b {
   font-family: var(--font-stamp);
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--stamp-amber);
@@ -971,19 +981,19 @@ input[type=checkbox] {
 .tipb {
   background: var(--stamp-blue-bg);
   color: #123d63;
-  border: 2px dashed var(--stamp-blue);
+  border: 1.5px dashed var(--stamp-blue);
   border-radius: var(--r);
-  padding: 14px 16px;
-  font-size: 0.95rem;
+  padding: 12px 14px;
+  font-size: 0.94rem;
   font-family: var(--font-body);
 }
 .clusters {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
-  gap: 14px;
+  gap: 12px;
 }
 .cl {
-  padding: 16px 18px;
+  padding: 14px 16px;
 }
 .cl-h {
   display: flex;
@@ -991,13 +1001,13 @@ input[type=checkbox] {
   justify-content: space-between;
   gap: 10px;
   flex-wrap: wrap;
-  margin-bottom: 10px;
-  border-bottom: 1.5px dashed var(--line);
-  padding-bottom: 8px;
+  margin-bottom: 8px;
+  border-bottom: 1.2px dashed var(--line);
+  padding-bottom: 6px;
 }
 .cl h4 {
   font-family: var(--font-typewriter);
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 700;
 }
 
@@ -1005,15 +1015,15 @@ input[type=checkbox] {
    BUDGET & BANK LEDGER SHEET
    ========================================================================== */
 .panel .pad {
-  padding: 18px 20px;
+  padding: 16px 18px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
 }
 .big {
   font-family: var(--font-typewriter);
   font-weight: 700;
-  font-size: clamp(2.2rem, 9vw, 3rem);
+  font-size: clamp(2rem, 8.5vw, 2.8rem);
   line-height: 1.1;
   color: var(--stamp-red);
 }
@@ -1021,9 +1031,9 @@ input[type=checkbox] {
   display: flex;
   justify-content: space-between;
   gap: 12px;
-  padding: 10px 0;
-  border-bottom: 1.5px dashed var(--line);
-  font-size: 0.95rem;
+  padding: 9px 0;
+  border-bottom: 1.2px dashed var(--line);
+  font-size: 0.94rem;
 }
 .rows > div:last-child { border-bottom: 0; }
 .rows b {
@@ -1033,13 +1043,13 @@ input[type=checkbox] {
 .bl {
   list-style: none;
   padding: 0;
-  font-size: 0.94rem;
+  font-size: 0.93rem;
 }
 .bl li {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 0;
+  padding: 9px 0;
   border-bottom: 1px dashed var(--line);
 }
 .bl li:last-child { border-bottom: 0; }
@@ -1051,11 +1061,11 @@ input[type=checkbox] {
 }
 
 .bag {
-  padding: 8px 18px;
+  padding: 6px 16px;
 }
 .bag .sm {
   border-bottom: 1px dashed var(--line);
-  min-height: 48px;
+  min-height: 44px;
 }
 .bag .sm:last-child { border-bottom: 0; }
 
@@ -1063,42 +1073,42 @@ input[type=checkbox] {
    FOOTER & TACTILE TOASTS
    ========================================================================== */
 footer {
-  padding-block: 28px 64px;
-  border-top: 2px dashed rgba(26, 20, 16, 0.25);
-  margin-top: 20px;
+  padding-block: 24px 60px;
+  border-top: 1.5px dashed rgba(30, 25, 21, 0.22);
+  margin-top: 16px;
 }
 footer p {
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   color: var(--ink-soft);
-  margin-bottom: 16px;
-  line-height: 1.55;
+  margin-bottom: 14px;
+  line-height: 1.5;
 }
 .fb {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
 }
 
 /* Rubber Stamp Style Toast */
 .toast {
   position: fixed;
   left: 50%;
-  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  bottom: calc(18px + env(safe-area-inset-bottom, 0px));
   z-index: 120;
   background: var(--ink);
   color: var(--paper);
   font-family: var(--font-typewriter);
   font-weight: 700;
-  font-size: 0.94rem;
-  padding: 12px 20px;
-  border: 2px solid var(--paper);
-  border-radius: 6px;
-  box-shadow: 4px 5px 0 rgba(0,0,0,0.6);
+  font-size: 0.92rem;
+  padding: 10px 18px;
+  border: 1.5px solid var(--paper);
+  border-radius: 5px;
+  box-shadow: 3px 4px 0 rgba(0,0,0,0.5);
   width: max-content;
   max-width: min(92vw, 440px);
   opacity: 0;
-  transform: translate(-50%, 14px) rotate(-1deg);
-  transition: opacity 0.22s, transform 0.22s;
+  transform: translate(-50%, 12px) rotate(-1deg);
+  transition: opacity 0.2s, transform 0.2s;
   pointer-events: none;
 }
 .toast.in {
@@ -1125,13 +1135,21 @@ footer p {
     </div>
     <div class="bar">
       <div class="brand">
-        <span class="brand-sub">Final Year Clearance Dossier</span>
+        <span class="brand-sub">Final Year Clearance</span>
         <b>FUTO Clearance Tracker</b>
-        <span>Session 2025/2026 · 15 Official Stops</span>
+        <span class="brand-session">Session 2025/2026 · 15 Official Stops</span>
       </div>
-      <div class="stamp-pill" id="hPillWrapper" title="Official Cleared Stamp Count">
-        <span class="sp-lbl">CLEARED</span>
-        <span class="sp-val" id="hPill">0 / 15</span>
+      <div class="header-badges">
+        <!-- Always at top: Money left to pay based on ticks -->
+        <div class="stamp-pill money-pill" id="hMoneyWrapper" title="Total money left to pay based on ticks">
+          <span class="sp-lbl">LEFT TO PAY</span>
+          <span class="sp-val" id="hLeft">₦0</span>
+        </div>
+        <!-- Always at top: Cleared stamps count -->
+        <div class="stamp-pill" id="hPillWrapper" title="Official Cleared Stamp Count">
+          <span class="sp-lbl">CLEARED</span>
+          <span class="sp-val" id="hPill">0 / 15</span>
+        </div>
       </div>
     </div>
     <nav class="tabs" role="tablist" aria-label="Clearance Sections">
@@ -1159,7 +1177,7 @@ footer p {
         <span class="v" id="sDone">0 / 15</span>
       </div>
       <div class="ov-box">
-        <span class="eyebrow">Estimated Left To Pay</span>
+        <span class="eyebrow">Left To Pay</span>
         <span class="v" id="sLeft">₦0</span>
       </div>
     </div>
@@ -1183,7 +1201,7 @@ footer p {
       <div>
         <h4>Operating Instructions</h4>
         <ol class="how">
-          <li><div><b>Tick a step once the ink stamp lands on your paper form.</b><span>Your clearance progress saves locally on this phone or browser automatically.</span></div></li>
+          <li><div><b>Tick a step once the ink stamp lands on your paper form.</b><span>Your clearance progress and fees update in real time at the top.</span></div></li>
           <li><div><b>Expand any step before heading out.</b><span>Check the exact room location, documents to carry in your folder, and required fee tellers.</span></div></li>
           <li><div><b>Respect the prerequisite stops.</b><span>Purchase the form, pay portal invoices, and verify at Bursary Room 19 first (Steps 1 to 3). Red tags highlight dependencies.</span></div></li>
           <li><div><b>Calibrate the Budget sheet.</b><span>Turn cushion tips or late penalty switches on or off to match your exact bank receipts.</span></div></li>
@@ -1531,7 +1549,7 @@ const save = () => {
 const openSet = new Set();
 
 /* ==========================================================================
-   AUDIO SFX (Tactile paper stamp & pen clicks)
+   AUDIO SFX
    ========================================================================== */
 const audioFiles = {
   snap: new Audio('assets/sfx/snap.ogg'),
@@ -1647,10 +1665,11 @@ function setDone(id, on) {
   } else if (!on) {
     playSfx('click');
     delete state.done[id];
+    delete state.paid[id];
   }
 }
 
-const CHEV = '<svg class="chev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8l5 5 5-5"/></svg>';
+const CHEV = '<svg class="chev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8l5 5 5-5"/></svg>';
 
 /* ==========================================================================
    RENDERERS
@@ -1766,6 +1785,21 @@ function renderLoc() {
   }).join('');
 }
 
+function updateTopMoney(L) {
+  const hLeft = $('#hLeft');
+  if (hLeft) hLeft.textContent = N(L);
+  const hMoneyWrap = $('#hMoneyWrapper');
+  if (hMoneyWrap) {
+    if (L === 0 && cnt() > 0) {
+      hMoneyWrap.classList.add('cleared');
+      hMoneyWrap.querySelector('.sp-lbl').textContent = 'ALL SETTLED';
+    } else {
+      hMoneyWrap.classList.remove('cleared');
+      hMoneyWrap.querySelector('.sp-lbl').textContent = 'LEFT TO PAY';
+    }
+  }
+}
+
 function renderBudget() {
   const T = total();
   const P = paidAmt();
@@ -1775,6 +1809,9 @@ function renderBudget() {
   $('#bTotal').textContent = N(T);
   $('#bPaid').textContent = N(P);
   $('#sLeft').textContent = N(L);
+  
+  updateTopMoney(L);
+  
   $('#bBar').style.width = (T ? P / T * 100 : 0) + '%';
   $$('[data-set]').forEach(i => { i.checked = !!state.settings[i.dataset.set]; });
   $('#bList').innerHTML = STEPS.filter(s => cost(s) > 0).map(s => `
@@ -1796,14 +1833,21 @@ function renderBag() {
       <span>${esc(t)}</span>
       <b>×${n} stops</b>
     </label>
-  `).join('') : '<p style="padding:16px 0; font-family:var(--font-hand); font-size:1.1rem; color:var(--stamp-green)">All documents accounted for! You are fully packed.</p>';
+  `).join('') : '<p style="padding:14px 0; font-family:var(--font-hand); font-size:1.05rem; color:var(--stamp-green)">All documents accounted for! You are fully packed.</p>';
 }
 
 function renderTop() {
   const n = cnt();
   const x = next();
+  const T = total();
+  const P = paidAmt();
+  const L = T - P;
+
   $('#sDone').textContent = n + ' / 15';
   $('#hPill').textContent = n + ' / 15';
+  $('#sLeft').textContent = N(L);
+  updateTopMoney(L);
+
   $('#mBar').style.width = (n / 15 * 100) + '%';
   $('#mAria').setAttribute('aria-valuenow', n);
   $('#mAria').setAttribute('aria-label', `${n} of 15 clearance stamps completed`);
@@ -1965,7 +2009,7 @@ addEventListener('click', e => {
   }
   if (a === 'copy') {
     playSfx('click');
-    const m = `FUTO Final Year Clearance Docket: ${cnt()}/15 stamps cleared. Settled ${N(paidAmt())} of ${N(total())} estimated balance.`;
+    const m = `FUTO Final Year Clearance Docket: ${cnt()}/15 stamps cleared. Outstanding balance: ${N(total() - paidAmt())}.`;
     try {
       navigator.clipboard.writeText(m).then(
         () => toast('Docket summary copied to clipboard'),
